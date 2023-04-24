@@ -4,7 +4,7 @@ import CartWidget from './CartWidget'
 export default function NavBar() {
   return (
     <div className='navbar-main'>
-        <h1>Techno Shop</h1>
+        <img src="img/logo.png" alt="" width="82" height="82"/>
         <div className='navbar-menu'>
             <a href='#' className='button-navbar'>Remeras</a>
             <a href='#' className='button-navbar'>Hoodies</a>
