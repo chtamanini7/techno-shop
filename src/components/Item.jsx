@@ -6,11 +6,11 @@ import { Link } from 'react-router-dom';
 export default function Item({item}) {
   return (
       <Card style={{ width: '18rem' }} >
-        <Card.Img variant="top" src={item.img} />
+        <Card.Img variant="top" src={item.data.img} />
         <Card.Body>
-          <Card.Title>{item.name}</Card.Title>
+          <Card.Title>{item.data.name}</Card.Title>
           <Card.Text>
-            {item.desc}
+            {item.data.desc}
           </Card.Text>
           <Link to={`/item/${item.id}`} ><Button variant="primary">Details</Button></Link>
         </Card.Body>

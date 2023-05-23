@@ -40,9 +40,11 @@ export default function NavBar() {
             >
                 {menuItems.map(cat => <Nav.Link><NavLink className="navbar-item" key={cat} to={`/category/${cat}`}>{cat}</NavLink></Nav.Link>)}
             </Nav>
-            <Button variant="outline-success">
-              <CartWidget />
-            </Button>
+            <Link to={'/cart'}>
+              <Button variant="outline-success">
+                <CartWidget />
+              </Button>
+            </Link>
           </Navbar.Collapse>
         </Container>
       </Navbar>

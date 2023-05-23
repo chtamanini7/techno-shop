@@ -52,3 +52,60 @@
   padding: 15px;
   width: 30%;
 }
+
+.itemcount-container{
+  display:inline-block;
+  max-width: 10rem;
+  justify-content: center;
+  margin-top: 1vh;
+  border-radius: 2px;
+  border: 1px solid #dbdada;
+}
+
+.itemcount-button{
+  width: 2rem;
+  text-align: center;
+  border: 1px;
+  border-radius: 2px;
+  background-color: white;
+  font-weight: bold;
+}
+
+.itemcount-button:active{
+  color: white;
+  background-color: #dbdada;
+}
+
+.itemcount-span{
+  text-align: center;
+  padding-inline: 2rem;
+}
+
+.item-count-button-buy{
+  margin-top: 1vh;
+  width: 10.5rem;
+  background-color: transparent;
+  color: rgb(55, 175, 55);
+  font-weight: 500;
+  border: 2px solid rgb(55, 175, 55);
+  border-radius: 2px;
+}
+
+.item-count-button-buy:hover{
+  background-color: rgb(55, 175, 55);
+  color: white;
+}
+
+.item-count-button-buy:active{
+  transform: translateY(1px);
+}
+
+.item-count-button-buy-nostock{
+  margin-top: 1vh;
+  width: 10.5rem;
+  background-color: #dbdada;
+  color: white;
+  font-weight: 500;
+  border: 2px solid #dbdada;
+  border-radius: 2px;
+}
