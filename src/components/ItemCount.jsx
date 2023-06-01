@@ -1,11 +1,7 @@
-import React, { useContext } from 'react'
-import { useState } from 'react'
-import {  ItemContext } from '../context/ItemContext'
-
+import React, { useState } from 'react'
 
 export default function ItemCount({ stock, initial, onAdd }) {
     const [productQuantity, setProductQuantity] = useState(initial);
-    const { setStatus } = useContext(ItemContext);
 
     const handleSumUp = () => {
         if(productQuantity < stock){
@@ -18,7 +14,6 @@ export default function ItemCount({ stock, initial, onAdd }) {
         }
     }
     const handleBuyButton = () =>{
-        setStatus((prev) => !prev);
         onAdd(productQuantity);
     }
 
@@ -33,7 +28,7 @@ export default function ItemCount({ stock, initial, onAdd }) {
             { stock > 0 ? 
                 <button className='item-count-button-buy' onClick={handleBuyButton}>Agregar al Carrito</button> : 
                 <button className='item-count-button-buy-nostock' >Sin Stock</button>
-                }
+            }
         </div>
     </div>
   )

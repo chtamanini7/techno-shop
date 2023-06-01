@@ -3,30 +3,8 @@ import { MDBFooter, MDBContainer, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
 
 function Footer() {
   return (
-    <MDBFooter bgColor='light' className='text-center text-lg-start text-muted'>
-      <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
-
-        <div>
-          <a href='#' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='facebook-f' />
-          </a>
-          <a href='#' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='twitter' />
-          </a>
-          <a href='#' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='google' />
-          </a>
-          <a href='#' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='instagram' />
-          </a>
-          <a href='#' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='linkedin' />
-          </a>
-          <a href='#' className='me-4 text-reset'>
-            <MDBIcon color='secondary' fab icon='github' />
-          </a>
-        </div>
-      </section>
+    <MDBFooter bgColor='light' className='text-center text-lg-start text-muted' style={{marginTop: '10vh'}}>
+      <hr/>
 
       <section className=''>
         <MDBContainer className='text-center text-md-start mt-5'>
@@ -42,17 +20,17 @@ function Footer() {
             <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
               <h6 className='text-uppercase fw-bold mb-4'>Products</h6>
               <p>
-                <a href='#!' className='text-reset'>
+                <a href='/category/Remeras' className='text-reset'>
                   Remeras
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
+                <a href='/category/Hoodies' className='text-reset'>
                   Hoodies
                 </a>
               </p>
               <p>
-                <a href='#!' className='text-reset'>
+                <a href='/category/Gorras' className='text-reset'>
                   Gorras
                 </a>
               </p>
@@ -85,7 +63,7 @@ function Footer() {
 
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2023 Copyright:
-        <a className='text-reset fw-bold' href=''>
+        <a className='text-reset fw-bold' href='/'>
           TechnoShop.com
         </a>
       </div>

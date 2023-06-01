@@ -9,11 +9,10 @@ import { getFirestore,  collection, getDocs, query, limit, where } from "firebas
 export default function ItemListContainer({greeting}) {
   const [productList, setProductList] = useState([]);
   const { id  } = useParams();
-  const db = getFirestore();
-
   
   useEffect(() => {
     let selectProducts;
+    const db = getFirestore();
     if(id){
       selectProducts = query(collection(db, "items"), where("category", "==", id),  limit(9));
 
@@ -24,7 +23,7 @@ export default function ItemListContainer({greeting}) {
       setProductList(evidence.docs.map(doc => {  return{id: doc.id, data: doc.data()}  }));
     })
             
-  }, [id,db])
+  }, [id])
   
   if(productList.length < 1){
     return <Container style={{ textAlign: 'center'}}><img src={loadcat} alt='gatogordo' /></Container>

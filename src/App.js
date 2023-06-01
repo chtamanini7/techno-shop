@@ -11,18 +11,19 @@ import CartContextProvider from './context/CartContext';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-      <CartContextProvider children={<NavBar />} />
-        <Routes>
-          <Route path='/' element={<ItemListContainer greeting={<h2 style={{ textAlign: "center"}}>Productos</h2>}/>} />
-          <Route path='/category/:id' element={<ItemListContainer />} />
-          <Route path='/item/:id' element={<ItemDetailContainer />} />
-          <Route path='/cart' element={<CartContextProvider children={<Cart />}/>} />
-          <Route path='*' element={<ErrorPage />} />
-        </Routes>
-      </BrowserRouter>
-      <Footer />
-      
+      <CartContextProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<ItemListContainer greeting={<h2 style={{ textAlign: "center"}}>Productos</h2>}/>} />
+            <Route path='/category/:id' element={<ItemListContainer />} />
+            <Route path='/item/:id' element={<ItemDetailContainer />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='*' element={<ErrorPage />} />
+          </Routes>
+        </BrowserRouter>
+        <Footer />
+      </CartContextProvider>
     </div>
   );
 }

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function Item({item}) {
   return (
-      <Card style={{ width: '18rem' }} >
+      <Card style={{ minWidth: '18vh' }} >
         <Card.Img variant="top" src={item.data.img} />
         <Card.Body>
           <Card.Title>{item.data.name}</Card.Title>

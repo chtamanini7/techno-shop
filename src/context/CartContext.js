@@ -4,31 +4,35 @@ export const CartContext = React.createContext();
 const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
     const [itemQuantity, setItemQuantity] = useState(0);
+    const [total, setTotal] = useState(0);
 
-    const addToCart = (item, qty) => {  //implementa la funcionalidad para agregar un producto al carrito
+    const addToCart = (item, qty) => { 
         const addedItem = {
-            img:    item.img,
-            name:   item.name,
-            price:  item.price,
+            id:     item.id,
+            img:    item.data.img,
+            name:   item.data.name,
+            price:  item.data.price,
             qty: qty
         };
-        console.log(addedItem);
-        setCartList(cartList => [addedItem,...cartList]);
-        console.log(cartList);
-        console.log('qty a agregar ' + addedItem.qty);
-        setItemQuantity(itemQuantity + addedItem.qty);
         
-        console.log('total del carro    ' + itemQuantity);
+        setCartList(cartList => [...cartList,addedItem]);
+        setItemQuantity(itemQuantity => itemQuantity + addedItem.qty);
+        setTotal(total => total + addedItem.qty * addedItem.price);
     }
-    const removeList = () => {	//implementa la funcionalidad para dejar el carrito vacío
+    const removeList = () => {
         setCartList([]);
+        setTotal(0);
+        setItemQuantity(0);
     }
-    const deleteItem = (id) => {	//implementa la funcionalidad para borrar un producto del carrito
-        setCartList(cartList.filter(val => val[0].id !== id));
+    const deleteItem = (id) => {
+        const aux = cartList.find(val => val.id === id);
+        setCartList(cartList.filter(val => val.id !== id));
+        setTotal(total => total - aux.qty * aux.price);
+        setItemQuantity(itemQuantity => itemQuantity - aux.qty);
     }
     
     return (
-        <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem, itemQuantity}}>
+        <CartContext.Provider value={{cartList, addToCart, removeList, deleteItem, itemQuantity, total}}>
             { children }
         </CartContext.Provider>
     );
