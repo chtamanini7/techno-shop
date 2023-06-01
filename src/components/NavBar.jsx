@@ -8,7 +8,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link} from "react-router-dom";
 
 export default function NavBar() {
-  const menuItems = ["Hoodies", "Remeras", "Gorras", "Login"];
+  const menuItems = ["Hoodies", "Remeras", "Gorras"];
 
   return (
     <div className="navbar-main">
